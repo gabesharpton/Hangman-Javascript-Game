@@ -1,0 +1,15 @@
+#modal {
+    background-color: rgba(0,0,0,0.4);
+    position: fixed;
+    top: 250;
+    left: 50;
+    height: 300px;
+    width: 600px;
+    z-index: 1;
+    overflow: auto;
+}
+ .keyboard {
+     color: green;
+     font-size: 15px;
+     height: 150px;
+ }

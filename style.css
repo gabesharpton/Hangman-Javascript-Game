@@ -1,6 +1,7 @@
 #modal {
     background-color: rgba(0,0,0,0.4);
-    position: fixed;
+    position: sticky;
+    display: grid;
     top: 250;
     left: 50;
     height: 300px;
@@ -12,4 +13,5 @@
      color: green;
      font-size: 15px;
      height: 150px;
+     max-width: 200px;
  }

@@ -1,7 +1,16 @@
 
 let randomWord = "";
 let guessAmount = 6;
+let close = document.getElementById('close')
+let red = this.style.backgroundColor('red')
+function dropBox(evt) {
+    //evt.preventDefault();
+    evt.style.backgroundColor = red;
 
+}
+
+
+close.addEventListener('click', dropBox)
 
 /*
             --------------------Basics of what I need------------------

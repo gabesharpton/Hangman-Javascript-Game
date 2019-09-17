@@ -1,17 +1,45 @@
+body{
+    text-align: center;
+}
+
 #modal {
-    background-color: rgba(0,0,0,0.4);
-    position: sticky;
-    display: grid;
-    top: 250;
-    left: 50;
+    background-color: rgba(45, 27, 126, 0.4);
+    position: absolute;
+    display: flexbox;
+    top: 250px;
+    left: 30%;
     height: 300px;
     width: 600px;
     z-index: 1;
     overflow: auto;
+    padding: 10px 30px 0px 30px;
 }
  .keyboard {
      color: green;
+     position: fixed;
+     left: 550px;
+     top: 650px;
      font-size: 15px;
      height: 150px;
-     max-width: 200px;
- }
+     max-width: 250px;
+     line-height: 20px;
+    }
+    
+.keyboards {
+    margin-left: 3px;
+    height: 10px;
+    width: 13px;
+    align-items: center;
+
+
+    }
+button{
+    margin: 0px 2px;
+    }
+    .guessingWord {
+        height: 20px;
+    }
+    section {
+        height: 50px;
+        background-color: green;
+    }

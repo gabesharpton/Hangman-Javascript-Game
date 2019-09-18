@@ -2,10 +2,10 @@
  let modal = document.getElementById('modal');
  let close = document.getElementById('close');
  let rules = document.getElementById('rules');
- let words = ['graas', 'paas', 'flaash']
- //["grain", "cheeks", "train", "plane", "car", "dog", "var", "let", "const"];
+ let words = ["grain", "wheat", "train", "plane", "car", "dog", "var", "let", "const", "group", "learn", "sweat", "orange", "host", "list", "group", "word", "hangmen", "role", "alien", "ufo", "space", "bread", "destroy", "humans"];
  let randomWord = Math.floor(Math.random() * words.length);
  let chosenWord = words[randomWord];
+ let arrWord = chosenWord.split(", ");
  let rightWord = [];
  let wrongWord = [];
  let underScore = [];
@@ -17,11 +17,13 @@
  
  
  //choose word randomly
- //create underscore based on length of words
  //get users guess
  //check if guess is right
  //if right push to screen
  //if wrong push to wrong array
+
+ 
+ //create underscore based on length of words
  let generateUnderScore = () => {
      for(let i = 0; i < chosenWord.length; i++){
          underScore.push("_");
@@ -35,9 +37,9 @@
     
     //user guess
     //generateUnderScore !== chosenWord.length
-    document.addEventListener('keypress', (event) => {
-        
-        //https://www.w3schools.com/jsref/event_key_keycode.asp
+    
+    //https://www.w3schools.com/jsref/event_key_keycode.asp
+        document.addEventListener('keypress', (event) => {
         let keycode = event.keyCode;
         let keyword = String.fromCharCode(keycode);
         
@@ -46,6 +48,8 @@
             //add to right words array
             rightWord.push(keyword);
             console.log(rightWord)
+            //check for if word has 2 letters
+
             //if wrong put in wrong word array
         }else{
             wrongWord.push(keyword);
@@ -55,25 +59,26 @@
             domUnderScore[0].innerHTML = underScore.join(' ');
             domRightGuess[0].innerHTML = rightWord;
             domWrongGuess[0].innerHTML = wrongWord;
-            checkWin();
-            //check to see if user word matches guess
             console.log(rightWord);
             console.log(chosenWord);
             console.log(underScore);
-    // if (rightWord == chosenWord){
-    //             console.log('you win');
+            console.log(arrWord);
+            // if (rightWord == chosenWord){
+                //             console.log('you win');
                 
-    //         }
-        }
-    )
-    
-    let checkWin = () => {
-        if(rightWord.length === chosenWord.length && rightWord.innerText === chosenWord){
-            alert('you win');
-            return;
-        }
-    }
-    
+                //         }
+                
+                //check to see if user word matches guess
+                let checkWin = () => {
+                    if(JSON.stringify(rightWord) == JSON.stringify(underScore)){
+                        alert('you win');
+                        return;
+                    }
+                }
+                checkWin();
+                //console.log(JSON.stringify(arrWord));
+            }
+            )
     
     function dropBox() {
         modal.style.display = 'none';
@@ -89,7 +94,7 @@
     
     
     
-    
+    //rightWord.length === chosenWord.length && 
     
     
     

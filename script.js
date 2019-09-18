@@ -1,73 +1,156 @@
 
-let words = ["grass", "train", "plane", "carrot", "dog", "var", "let", "const"];
-let guessWord = [];
-let guessAmount = 6;
-let modal = document.getElementById('modal');
-let close = document.getElementById('close');
-let rules = document.getElementById('rules');
-let word = document.getElementById('input');
-let submit = document.getElementById('submit');
-let random = document.getElementById('random');
-let newWord = document.getElementById('guessingWord');
-
-function dropBox() {
-    modal.style.display = 'none';
-}
-function ruleOpen() {
-    modal.style.display = 'block';
-
-}
-// function wordSelect() {
-//     let word = input.value;
-//     console.log(input.value);
-
-//     // newWording.appendChild(word);
-    
-//     // document.body.appendChild(newWord);
-// }
-//random.addEventListener('click', () => {
-
-    let guessingWord = words[Math.floor(Math.random()* words.length)];
-    for(let i = 0; i < guessingWord.length; i++){
-        guessWord[i] = "_";
-    }
-//})
-
-var remainingLetters = guessingWord.length;
-//////////////////------------Main game loop-------------
-
-while(remainingLetters > 0){
-        alert(guessWord.join(" "));
-    var guess = prompt('guess a letter');
-        ///if cancle is selected
-        if(guess == null){
-                //end loop
-            break;
-            //if guess is more than one letter
-        }else if (guess.length !== 1){
-            alert('use single letter');
-            //valid guess
-        }else{
-            //update the game state with the guess
-            for(var j = 0; j < guessingWord.length; j++){
-                //if the letter the guess is in the word
-
-                if(guessingWord[j] === guess){
-                    //update answer array
-                    guessWord[j] = guess;
-                    //subtract one from remaining
-                    remainingLetters--;
-                }
-            }
+ let modal = document.getElementById('modal');
+ let close = document.getElementById('close');
+ let rules = document.getElementById('rules');
+ let words = ['graas', 'paas', 'flaash']
+ //["grain", "cheeks", "train", "plane", "car", "dog", "var", "let", "const"];
+ let randomWord = Math.floor(Math.random() * words.length);
+ let chosenWord = words[randomWord];
+ let rightWord = [];
+ let wrongWord = [];
+ let underScore = [];
+ 
+ let domUnderScore = document.getElementsByClassName('underscore');
+ let domRightGuess = document.getElementsByClassName('rightguess');
+ let domWrongGuess = document.getElementsByClassName('wrongguess');
+ 
+ 
+ 
+ //choose word randomly
+ //create underscore based on length of words
+ //get users guess
+ //check if guess is right
+ //if right push to screen
+ //if wrong push to wrong array
+ let generateUnderScore = () => {
+     for(let i = 0; i < chosenWord.length; i++){
+         underScore.push("_");
         }
-        ///////---------end game loop---------////
-}
-
-
+        return underScore;
+    }
+    console.log(rightWord);
+    console.log(chosenWord);
+    console.log(underScore);
+    console.log(generateUnderScore());
+    
+    //user guess
+    //generateUnderScore !== chosenWord.length
+    document.addEventListener('keypress', (event) => {
+        
+        //https://www.w3schools.com/jsref/event_key_keycode.asp
+        let keycode = event.keyCode;
+        let keyword = String.fromCharCode(keycode);
+        
+        //if Users guess is right
+        if(chosenWord.indexOf(keyword) > -1){
+            //add to right words array
+            rightWord.push(keyword);
+            console.log(rightWord)
+            //if wrong put in wrong word array
+        }else{
+            wrongWord.push(keyword);
+            console.log(wrongWord)}
+            //replace underscore with right or wrong letter
+            underScore[chosenWord.indexOf(keyword)] = keyword;
+            domUnderScore[0].innerHTML = underScore.join(' ');
+            domRightGuess[0].innerHTML = rightWord;
+            domWrongGuess[0].innerHTML = wrongWord;
+            checkWin();
+            //check to see if user word matches guess
+            console.log(rightWord);
+            console.log(chosenWord);
+            console.log(underScore);
+    // if (rightWord == chosenWord){
+    //             console.log('you win');
+                
+    //         }
+        }
+    )
+    
+    let checkWin = () => {
+        if(rightWord.length === chosenWord.length && rightWord.innerText === chosenWord){
+            alert('you win');
+            return;
+        }
+    }
+    
+    
+    function dropBox() {
+        modal.style.display = 'none';
+    }
+    function ruleOpen() {
+        modal.style.display = 'block';
+        
+    }
+    
+    
+    rules.addEventListener('click', ruleOpen)
+    close.addEventListener('click', dropBox);
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 
-
-
+        
+        
+        
+        
+        
+        
+        
+        // let guessAmount = 6;
+        // let word = document.getElementById('input');
+        // let submit = document.getElementById('submit');
+        // let random = document.getElementById('random');
+        //let newWord = document.getElementById('guessingword');
+        
+        
+        //let guessWord = [];
+        
+        
+        
+//generateUnderScore();
+    //////////////////------------Main game loop-------------
+//    var remainingLetters = chosenWord.length;
+    
+//     while(remainingLetters > 0){
+//             let newDiv = document.createElement('div');  
+//             let choice =  guessWord.join(" ")
+//             newDiv.appendChild(choice);
+//             var guess = keyboards;
+//                 ///if cancle is selected
+//                 if(guess == null){
+//                             //end loop
+//                         break;
+//                         //if guess is more than one letter
+//                     }else if (guess.length !== 1){
+//                             alert('use single letter');
+//                             //valid guess
+//                         }else{
+//                                 //update the game state with the guess
+//                                 for(var j = 0; j < guessingWord.length; j++){
+//                                         //if the letter the guess is in the word
+                        
+//                                         if(guessingWord[j] === guess){
+//                                                 //update answer array
+//                                                 guessWord[j] = guess;
+//                                                 //subtract one from remaining
+//                                                 remainingLetters--;
+//                                             }
+//                                         }
+//                                     }
+                            //         ///////---------end game loop---------////
+                            // }
+                            
+                            
+                            
+                            
     ///Had help from carlos for this.
 //     submit.addEventListener('click', () => {
 //         console.log(word.value);
@@ -81,8 +164,8 @@ while(remainingLetters > 0){
 //console.log(newContent)
 //console.log(submit)
 
-rules.addEventListener('click', ruleOpen)
-close.addEventListener('click', dropBox);
+//underScores[0].innerHTML = underScore().join(' ');
+
 //submit.addEventListener('click', wordSelect)
 /*
             --------------------Basics of what I need------------------

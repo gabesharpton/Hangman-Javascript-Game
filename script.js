@@ -9,18 +9,12 @@
  let rightWord = [];
  let wrongWord = [];
  let underScore = [];
- let guessAmount = 6;
+ let guessAmount = 7;
  let domUnderScore = document.getElementsByClassName('underscore');
  let domRightGuess = document.getElementsByClassName('rightguess');
  let domWrongGuess = document.getElementsByClassName('wrongguess');
  
-//  let attribute = underScore.getAttribute();
-//  console.log(attribute)
- //choose word randomly
- //get users guess
- //check if guess is right
- //if right push to screen
- //if wrong push to wrong array
+
 
  
  //create underscore based on length of words
@@ -37,100 +31,123 @@
     console.log(generateUnderScore());
     
     //user guess
-    //generateUnderScore !== chosenWord.length
+   
     
 
 
 //-------------------------------------------------------------Main Game--------------------------------------------------------//
+document.addEventListener('keypress', (event) => {
     //https://www.w3schools.com/jsref/event_key_keycode.asp
-    document.addEventListener('keypress', (event) => {
-            let keycode = event.keyCode;
-            let keyword = String.fromCharCode(keycode);
+            //let keycode = event.keyCode;
+            let keyword = String.fromCharCode(event.keyCode);
         
         //if Users guess is right
-        if(chosenWord.indexOf(keyword) > -1)
-        {
-            //add to right words array
-            rightWord.push(keyword);
-            console.log(rightWord)
-            //check for if word has 2 letters
-        
-            //if wrong put in wrong word array and deduct guess amount
-        }else
-                {
-                    wrongWord.push(keyword);
-                    guessAmount -= 1;
-                    console.log(wrongWord)
-                    console.log(guessAmount)
-                }
+                    if(chosenWord.indexOf(keyword) > -1)
+                    {
+                        //add to right words array
+                        rightWord.push(keyword);
+                        console.log(rightWord)
+                        //check for if word has 2 letters
+                    
+                        //if wrong put in wrong word array and deduct guess amount
+                    }else
+                                {
+                                    wrongWord.push(keyword);
+                                    guessAmount -= 1;
+                                    console.log(wrongWord)
+                                    console.log(guessAmount)
+                               
+                                }
             //replace underscore with right or wrong letter
-            underScore[chosenWord.indexOf(keyword)] = keyword;
-            domUnderScore[0].innerHTML = underScore.join(' ');
-            domRightGuess[0].innerHTML = rightWord;
-            domWrongGuess[0].innerHTML = wrongWord;
-            console.log(rightWord);
-            console.log(chosenWord);
-            console.log(underScore);
-            console.log(arrWord);
-           
+                                                    underScore[chosenWord.indexOf(keyword)] = keyword;
+                                                    domUnderScore[0].innerHTML = underScore.join(' ');
+                                                    domRightGuess[0].innerHTML = rightWord;
+                                                    domWrongGuess[0].innerHTML = wrongWord;
+                                                    console.log(rightWord);
+                                                    console.log(chosenWord);
+                                                    console.log(underScore);
+                                                    console.log(arrWord);
+                                                
                 
                 //check to see if user word matches guess
                 let checkWin = () => 
                 {
-                    //
-                    if(JSON.stringify(rightWord) == JSON.stringify(underScore))
-                            {
-                                setTimeout(function(){alert('you win');}, 100);
-                                return;
-                            }
-                        if(guessAmount <= 0)
-                        {
-                            alert('you lose')
-                        }
+
+                    
+                    // value
+                    if(underScore.value == chosenWord.value && rightWord.length == chosenWord.length)
+                    {
+                        setTimeout(function(){alert('you win');}, 100);
+                        return;
+                    }
+                    if(guessAmount <= 0)
+                    {
+                        alert('you lose')
+                     }
+                
+                
                 }
-                checkWin();
-                //console.log(JSON.stringify(arrWord));
-                console.log(JSON.stringify(rightWord));
-            }
-            )
-    
-    function dropBox() {
-        modal.style.display = 'none';
-    }
-    function ruleOpen() {
-        modal.style.display = 'block';
-        
-    }
-    
-    
+                    checkWin();
 
-    rules.addEventListener('click', ruleOpen)
-    close.addEventListener('click', dropBox);
-    
-    
+            });
+        
+                
+                
+                rules.addEventListener('click', () => {
+                    modal.style.display = 'block';
+                });
+                
+                
+                close.addEventListener('click', () => {
+                    modal.style.display = 'none';
+                    let newDiv = document.createElement('div')
+                    let newContent = document.createTextNode(`${guessAmount}`)
+                    newDiv.appendChild(newContent)
+                    document.body.appendChild(newDiv)});
+                    //});
+                    
+                    
+                    
 
-    close.addEventListener('click', () => {
-                console.log(underScore);
-                let newDiv = document.createElement('div')
-                let newContent = document.createTextNode(`${guessAmount}`)
-            newDiv.appendChild(newContent)
-            document.body.appendChild(newDiv)});
-    
-    //rightWord.length === chosenWord.length && 
-    
-    
-    
-    
-    //loop through all the items in an array to make sure they do have the same value
 
-    
 
-        
-        
-        
-        
-        
-        
+
+
+                    //  let attribute = underScore.getAttribute();
+//  console.log(attribute)
+ //choose word randomly
+ //get users guess
+ //check if guess is right
+ //if right push to screen
+ //if wrong push to wrong array
+                    
+                    // close.addEventListener('click', () => {
+                        //             console.log(underScore);
+                        //             let newDiv = document.createElement('h4')
+                        //             let newContent = document.createTextNode(`${guessAmount}`)
+                        //         newDiv.appendChild(newContent)
+                        //         document.body.appendChild(newDiv)});
+                        
+                        //rightWord.length === chosenWord.length && 
+                        
+                        
+                        
+                        
+                        //loop through all the items in an array to make sure they do have the same value
+                        
+                        
+                        
+                        
+                        // for( i = 0; i > chosenWord.length; i++){
+                        //     if(arrWord.value == chosenWord.value){
+                        //         alert('winner')
+                        //     }
+                        // }
+                        
+                        
+                        
+                        
+                        
         
        
         // let word = document.getElementById('input');

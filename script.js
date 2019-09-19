@@ -42,17 +42,20 @@ let pic6 = document.getElementById('gallow6');
 //-------------------------------------------------------------Main Game--------------------------------------------------------//
 document.addEventListener('keypress', (event) => {
     //https://www.w3schools.com/jsref/event_key_keycode.asp
-            //let keycode = event.keyCode;
-            let keyword = String.fromCharCode(event.keyCode);
+            let keycode = event.keyCode;
+            let keyword = String.fromCharCode(keycode);
         
         //if Users guess is right
                     if(chosenWord.indexOf(keyword) > -1)
                     {
                         //add to right words array
-                        rightWord.push(keyword);
+                        // for(let i = 0; i < chosenWord.length; i++){
+                            rightWord.push(keyword);
                         console.log(rightWord);
+                        
                         //check for if word has 2 letters
-                    
+                    // }if(rightWord.value > 2){
+                    //     return;
                         //if wrong put in wrong word array and deduct guess amount
                     }else
                                 {
@@ -71,7 +74,7 @@ document.addEventListener('keypress', (event) => {
                                                     console.log(chosenWord);
                                                     console.log(underScore);
                                                     console.log(arrWord);
-                                                
+                                                    console.log(keycode);
                 
                 //check to see if user word matches guess
                 let checkWin = () => 
@@ -86,11 +89,17 @@ document.addEventListener('keypress', (event) => {
                     }
                     if(guessAmount <= 0)
                     {
-                        alert('you lose')
+                        setTimeout(function(){alert('you lose')}, 500);
                      }
                 
                 
                 }
+                let newDiv = document.createElement('span')
+                let newContent = document.createTextNode(`You have ${guessAmount} guesses remaining.`)
+                newDiv.appendChild(newContent)
+                document.body.appendChild(newDiv)
+                newDiv.style.display = 'hidden';
+
                     changePic();
                     checkWin();
             });
@@ -115,6 +124,7 @@ document.addEventListener('keypress', (event) => {
                     }if(guessAmount === 0){
                         pic5.style.display = 'none';
                         pic6.style.display = 'block';
+                        pic6.style.zIndex = 2;
                     }
                     
                 }
@@ -127,11 +137,11 @@ document.addEventListener('keypress', (event) => {
                 
                 
                 close.addEventListener('click', () => {
-                    modal.style.display = 'none';
-                    let newDiv = document.createElement('div')
-                    let newContent = document.createTextNode(`${guessAmount}`)
-                    newDiv.appendChild(newContent)
-                    document.body.appendChild(newDiv)});
+                    modal.style.display = 'none';});
+                    // let newDiv = document.createElement('div')
+                    // let newContent = document.createTextNode(`${guessAmount}`)
+                    // newDiv.appendChild(newContent)
+                    // document.body.appendChild(newDiv)});
                     //});
                     
                     

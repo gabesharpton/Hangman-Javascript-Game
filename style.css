@@ -5,7 +5,7 @@ body{
 #modal {
     background-color: rgb(244, 247, 56);
     position: absolute;
-    display: flexbox;
+    display: block;
     top: 180px;
     left: 15%;
     height: 500px;
@@ -32,7 +32,8 @@ button{
 .underscore {
     font-size: 50px;
     text-align: center;
-    margin: 50px auto;
+    /* margin-top: 400px; */
+    margin: 400px auto 40px auto;
     height: 150px;
     width: 280px;
     border: 2px black solid;
@@ -66,6 +67,10 @@ h4{
 img{
     width: 640px;
     height: 480px;
+    position: absolute;
+    top: 120px;
+    left: 460px;
+    z-index: -1;
 }
 
 img#gallow1 {
@@ -85,4 +90,12 @@ img#gallow5{
 }
 img#gallow6{
     display: none;
+}
+
+span {
+    position: absolute;
+    display: inline-block;
+    top: 100px;
+    right: 200px;
+    height: 200px;
 }

@@ -59,10 +59,14 @@ button{
     width: 40%;
     border: 2px black solid;
     margin: 50px auto;
+    text-align: center;
+    font-size: 25px;
 }
 .rightguess {
     height: 150px;
     width: 40%;
     border: 2px black solid;
     margin: 50px auto;
+    text-align: center;
+    font-size: 25px;
 }

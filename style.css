@@ -6,35 +6,20 @@ body{
     background-color: rgb(244, 247, 56);
     position: absolute;
     display: flexbox;
-    top: 250px;
-    left: 30%;
-    height: 300px;
-    width: 600px;
+    top: 180px;
+    left: 15%;
+    height: 500px;
+    width: 700px;
     z-index: 1;
     overflow: auto;
     padding: 10px 30px 0px 30px;
 }
- /* .keyboard {
-     color: green;
-     position: fixed;
-     left: 550px;
-     top: 650px;
-     font-size: 15px;
-     height: 150px;
-     max-width: 250px;
-     line-height: 20px;
-    }
-    
-.keyboards {
-    margin-left: 3px;
-    height: 10px;
-    width: 13px;
-    align-items: center;
-
-
-    } */
+ 
 button{
     margin: 0px 2px;
+    position: fixed;
+    top: 50px;
+    left: 10px;
     }
     .guessingWord {
         height: 20px;
@@ -56,6 +41,7 @@ button{
 
 .wrongguess {
     height: 100px;
+    display:inline-block;
     width: 40%;
     border: 2px black solid;
     margin: 50px auto;
@@ -63,6 +49,7 @@ button{
     font-size: 25px;
 }
 .rightguess {
+    display: inline-block;
     height: 150px;
     width: 40%;
     border: 2px black solid;
@@ -75,4 +62,27 @@ h4{
     position: sticky;
     top: 100px;
     right: 100px;
+}
+img{
+    width: 640px;
+    height: 480px;
+}
+
+img#gallow1 {
+    display: none;
+}
+img#gallow2{
+    display: none;
+}
+img#gallow3{
+    display: none;
+}
+img#gallow4{
+    display: none;
+}
+img#gallow5{
+    display: none;
+}
+img#gallow6{
+    display: none;
 }

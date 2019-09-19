@@ -14,9 +14,13 @@
  let domRightGuess = document.getElementsByClassName('rightguess');
  let domWrongGuess = document.getElementsByClassName('wrongguess');
  
-
-
- 
+ let base = document.getElementById('base');
+let pic1 = document.getElementById('gallow1');
+let pic2 = document.getElementById('gallow2');
+let pic3 = document.getElementById('gallow3');
+let pic4 = document.getElementById('gallow4');
+let pic5 = document.getElementById('gallow5');
+let pic6 = document.getElementById('gallow6');
  //create underscore based on length of words
  let generateUnderScore = () => 
     {
@@ -46,7 +50,7 @@ document.addEventListener('keypress', (event) => {
                     {
                         //add to right words array
                         rightWord.push(keyword);
-                        console.log(rightWord)
+                        console.log(rightWord);
                         //check for if word has 2 letters
                     
                         //if wrong put in wrong word array and deduct guess amount
@@ -54,9 +58,9 @@ document.addEventListener('keypress', (event) => {
                                 {
                                     wrongWord.push(keyword);
                                     guessAmount -= 1;
-                                    console.log(wrongWord)
-                                    console.log(guessAmount)
-                               
+                                    console.log(wrongWord);
+                                    console.log(guessAmount);
+                                    console.log(guessAmount);
                                 }
             //replace underscore with right or wrong letter
                                                     underScore[chosenWord.indexOf(keyword)] = keyword;
@@ -77,7 +81,7 @@ document.addEventListener('keypress', (event) => {
                     // value
                     if(underScore.value == chosenWord.value && rightWord.length == chosenWord.length)
                     {
-                        setTimeout(function(){alert('you win');}, 100);
+                        setTimeout(function(){alert('you win')}, 100);
                         return;
                     }
                     if(guessAmount <= 0)
@@ -87,11 +91,35 @@ document.addEventListener('keypress', (event) => {
                 
                 
                 }
+                    changePic();
                     checkWin();
-
             });
         
                 
+                let changePic = () => {
+                    if(guessAmount === 5){
+                        base.style.display = 'none';
+                        pic1.style.display = 'block';
+                    }if(guessAmount === 4){
+                        pic1.style.display = 'none';
+                        pic2.style.display = 'block';
+                    }if(guessAmount === 3){
+                        pic2.style.display = 'none';
+                        pic3.style.display = 'block';
+                    }if(guessAmount === 2){
+                        pic3.style.display = 'none';
+                        pic4.style.display = 'block';
+                    }if(guessAmount === 1){
+                        pic4.style.display = 'none';
+                        pic5.style.display = 'block';
+                    }if(guessAmount === 0){
+                        pic5.style.display = 'none';
+                        pic6.style.display = 'block';
+                    }
+                    
+                }
+
+
                 
                 rules.addEventListener('click', () => {
                     modal.style.display = 'block';

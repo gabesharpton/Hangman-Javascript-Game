@@ -13,14 +13,18 @@
  let domUnderScore = document.getElementsByClassName('underscore');
  let domRightGuess = document.getElementsByClassName('rightguess');
  let domWrongGuess = document.getElementsByClassName('wrongguess');
- 
- let base = document.getElementById('base');
+ let domSpan = document.querySelector('span');
+
+
+let base = document.getElementById('base');
 let pic1 = document.getElementById('gallow1');
 let pic2 = document.getElementById('gallow2');
 let pic3 = document.getElementById('gallow3');
 let pic4 = document.getElementById('gallow4');
 let pic5 = document.getElementById('gallow5');
 let pic6 = document.getElementById('gallow6');
+
+
  //create underscore based on length of words
  let generateUnderScore = () => 
     {
@@ -35,15 +39,22 @@ let pic6 = document.getElementById('gallow6');
     console.log(generateUnderScore());
     
     //user guess
-   
+    
+    let displayGuess = () => 
+            {
+            domSpan = document.createTextNode(`${input.value}`)
+         
+            }
+         
+
     
 
 
 //-------------------------------------------------------------Main Game--------------------------------------------------------//
 document.addEventListener('keypress', (event) => {
+    
     //https://www.w3schools.com/jsref/event_key_keycode.asp
-            let keycode = event.keyCode;
-            let keyword = String.fromCharCode(keycode);
+            let keyword = String.fromCharCode(event.keyCode);
         
         //if Users guess is right
                     if(chosenWord.indexOf(keyword) > -1)
@@ -74,7 +85,7 @@ document.addEventListener('keypress', (event) => {
                                                     console.log(chosenWord);
                                                     console.log(underScore);
                                                     console.log(arrWord);
-                                                    console.log(keycode);
+                                                    //console.log(keycode);
                 
                 //check to see if user word matches guess
                 let checkWin = () => 
@@ -90,84 +101,96 @@ document.addEventListener('keypress', (event) => {
                     if(guessAmount <= 0)
                     {
                         setTimeout(function(){alert('you lose')}, 500);
-                     }
+                    }
                 
                 
                 }
-                let newDiv = document.createElement('span')
-                let newContent = document.createTextNode(`You have ${guessAmount} guesses remaining.`)
-                newDiv.appendChild(newContent)
-                document.body.appendChild(newDiv)
-                newDiv.style.display = 'hidden';
-
-                    changePic();
-                    checkWin();
-            });
-        
                 
-                let changePic = () => {
-                    if(guessAmount === 5){
+                changePic();
+                checkWin();
+            });
+            
+           
+
+
+            let changePic = () => 
+            {
+                    if(guessAmount === 5)
+                    {
                         base.style.display = 'none';
                         pic1.style.display = 'block';
-                    }if(guessAmount === 4){
+
+                    }
+                    if(guessAmount === 4)
+                    {
                         pic1.style.display = 'none';
                         pic2.style.display = 'block';
-                    }if(guessAmount === 3){
+
+                    }
+                    if(guessAmount === 3)
+                    {
                         pic2.style.display = 'none';
                         pic3.style.display = 'block';
-                    }if(guessAmount === 2){
+
+                    }
+                    if(guessAmount === 2)
+                    {
                         pic3.style.display = 'none';
                         pic4.style.display = 'block';
-                    }if(guessAmount === 1){
+
+                    }
+                    if(guessAmount === 1)
+                    {
                         pic4.style.display = 'none';
                         pic5.style.display = 'block';
-                    }if(guessAmount === 0){
+
+                    }
+                    if(guessAmount === 0)
+                    {
                         pic5.style.display = 'none';
                         pic6.style.display = 'block';
                         pic6.style.zIndex = 2;
                     }
                     
-                }
+            }
 
 
                 
-                rules.addEventListener('click', () => {
-                    modal.style.display = 'block';
-                });
+rules.addEventListener('click', () => {modal.style.display = 'block';});
                 
                 
-                close.addEventListener('click', () => {
-                    modal.style.display = 'none';});
-                    // let newDiv = document.createElement('div')
-                    // let newContent = document.createTextNode(`${guessAmount}`)
-                    // newDiv.appendChild(newContent)
-                    // document.body.appendChild(newDiv)});
-                    //});
+close.addEventListener('click', () => {modal.style.display = 'none';});
+                   
                     
                     
                     
 
+/*
+            --------------------Basics of what I need------------------
+A basic function to guess the word that is selected.
+You get 6 wrong guesses
+A guess line with underscores for how many letters the hidden word has
+The letter dissapears after selected
+If the letter is correct display on guess line, if not it will take away a guess and display body part
+
+            --------------------Extra I would like------------------
+user inputs guessing word
+game counter
+reset button
+*/
 
 
 
+////////------------------------------------------------------NONSENSE-----------------------------------------------------/////
 
-                    //  let attribute = underScore.getAttribute();
-//  console.log(attribute)
+                  
  //choose word randomly
  //get users guess
  //check if guess is right
  //if right push to screen
  //if wrong push to wrong array
                     
-                    // close.addEventListener('click', () => {
-                        //             console.log(underScore);
-                        //             let newDiv = document.createElement('h4')
-                        //             let newContent = document.createTextNode(`${guessAmount}`)
-                        //         newDiv.appendChild(newContent)
-                        //         document.body.appendChild(newDiv)});
-                        
-                        //rightWord.length === chosenWord.length && 
-                        
+                
                         
                         
                         
@@ -187,18 +210,8 @@ document.addEventListener('keypress', (event) => {
                         
                         
         
-       
-        // let word = document.getElementById('input');
-        // let submit = document.getElementById('submit');
-        // let random = document.getElementById('random');
-        //let newWord = document.getElementById('guessingword');
         
-        
-        //let guessWord = [];
-        
-        
-        
-//generateUnderScore();
+
     //////////////////------------Main game loop-------------
 //    var remainingLetters = chosenWord.length;
     
@@ -250,29 +263,3 @@ document.addEventListener('keypress', (event) => {
 //underScores[0].innerHTML = underScore().join(' ');
 
 //submit.addEventListener('click', wordSelect)
-/*
-            --------------------Basics of what I need------------------
-A basic function to guess the word you input first.
-You get 6 wrong guesses
-A key board with each letter of the alphabet
-A guess line with underscores for how many letters the hidden word has
-The letter dissapears after selected
-If the letter is correct display on guess line, if not it will take away a guess and display body part
-
-
-
-                -----------Hangman Game function----------------
-                o through every time length of the word is greater than zero it should seperate each letter 
-                extract each letter and put them in seperate underline or letter box
-
-
-
-
-
-            --------------------Extra I would like------------------
-Random letter bank
-has random button option instead of word you choose
-Maybe add pictures instead of letter for body parts
-
-
-*/

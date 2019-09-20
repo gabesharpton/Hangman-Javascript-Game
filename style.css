@@ -21,42 +21,37 @@ button{
     top: 50px;
     left: 10px;
     }
-    .guessingWord {
-        height: 20px;
-    }
-    section {
-        height: 50px;
-        background-color: green;
-    }
 
 .underscore {
     font-size: 50px;
     text-align: center;
-    /* margin-top: 400px; */
     margin: 400px auto 40px auto;
-    height: 150px;
-    width: 280px;
+    height: 100px;
+    width: 30%;
     border: 2px black solid;
     display: block;
+    background-color: green;
 }
 
 .wrongguess {
     height: 100px;
     display:inline-block;
-    width: 40%;
+    width: 30%;
     border: 2px black solid;
     margin: 50px auto;
     text-align: center;
     font-size: 25px;
+    background-color: red;
 }
 .rightguess {
     display: inline-block;
-    height: 150px;
-    width: 40%;
+    height: 100px;
+    width: 30%;
     border: 2px black solid;
     margin: 50px auto;
     text-align: center;
     font-size: 25px;
+    background-color: green;
 }
 h4{
     display: inline-block;
@@ -68,8 +63,8 @@ img{
     width: 640px;
     height: 480px;
     position: absolute;
-    top: 120px;
-    left: 460px;
+    top: 10%;
+    left: 37%;
     z-index: -1;
 }
 
@@ -98,4 +93,10 @@ span {
     top: 100px;
     right: 200px;
     height: 200px;
+}
+p#first {
+    position: absolute;
+    top: 500px;
+    left: 47%;
+
 }

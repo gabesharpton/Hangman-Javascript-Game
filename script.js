@@ -33,18 +33,15 @@ let pic6 = document.getElementById('gallow6');
         }
         return underScore;
     }
-    console.log(rightWord);
-    console.log(chosenWord);
-    console.log(underScore);
-    console.log(generateUnderScore());
     
+    generateUnderScore();
     //user guess
     
-    let displayGuess = () => 
-            {
-            domSpan = document.createTextNode(`${input.value}`)
+    // let displayGuess = () => 
+    //         {
+    //         domSpan = document.createTextNode(`${guessAmount}`)
          
-            }
+    //         }
          
 
     
@@ -59,33 +56,21 @@ document.addEventListener('keypress', (event) => {
         //if Users guess is right
                     if(chosenWord.indexOf(keyword) > -1)
                     {
-                        //add to right words array
-                        // for(let i = 0; i < chosenWord.length; i++){
+                     
                             rightWord.push(keyword);
-                        console.log(rightWord);
-                        
-                        //check for if word has 2 letters
-                    // }if(rightWord.value > 2){
-                    //     return;
-                        //if wrong put in wrong word array and deduct guess amount
+                       
                     }else
                                 {
                                     wrongWord.push(keyword);
                                     guessAmount -= 1;
-                                    console.log(wrongWord);
-                                    console.log(guessAmount);
-                                    console.log(guessAmount);
+                                  
                                 }
             //replace underscore with right or wrong letter
                                                     underScore[chosenWord.indexOf(keyword)] = keyword;
                                                     domUnderScore[0].innerHTML = underScore.join(' ');
                                                     domRightGuess[0].innerHTML = rightWord;
                                                     domWrongGuess[0].innerHTML = wrongWord;
-                                                    console.log(rightWord);
-                                                    console.log(chosenWord);
-                                                    console.log(underScore);
-                                                    console.log(arrWord);
-                                                    //console.log(keycode);
+                                                   
                 
                 //check to see if user word matches guess
                 let checkWin = () => 
@@ -93,7 +78,7 @@ document.addEventListener('keypress', (event) => {
 
                     
                     // value
-                    if(underScore.value == chosenWord.value && rightWord.length == chosenWord.length)
+                    if(underScore.value === chosenWord.value && rightWord.length === chosenWord.length)
                     {
                         setTimeout(function(){alert('you win')}, 100);
                         return;
@@ -105,7 +90,7 @@ document.addEventListener('keypress', (event) => {
                 
                 
                 }
-                
+                // displayGuess();
                 changePic();
                 checkWin();
             });
@@ -263,3 +248,34 @@ reset button
 //underScores[0].innerHTML = underScore().join(' ');
 
 //submit.addEventListener('click', wordSelect)
+
+
+
+
+
+
+// console.log(rightWord);
+                        
+                        //check for if word has 2 letters
+                    // }if(rightWord.value > 2){
+                    //     return;
+                        //if wrong put 
+
+                           //add to right words array
+                        // for(let i = 0; i < chosenWord.length; i++){
+ // console.log(rightWord);
+                                                    // console.log(chosenWord);
+                                                    // console.log(underScore);
+                                                    // console.log(arrWord);
+                                                    //console.log(keycode);
+  // console.log(wrongWord);
+                                    // console.log(guessAmount);
+                                    // console.log(guessAmount);
+
+                                     //in wrong word array and deduct guess amount
+
+
+                                     // console.log(rightWord);
+    // console.log(chosenWord);
+    // console.log(underScore);
+    // console.log(generateUnderScore());

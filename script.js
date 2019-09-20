@@ -13,7 +13,7 @@
  let domUnderScore = document.getElementsByClassName('underscore');
  let domRightGuess = document.getElementsByClassName('rightguess');
  let domWrongGuess = document.getElementsByClassName('wrongguess');
- let domSpan = document.querySelector('span');
+ //let domSpan = document.querySelector('span');
 
 
 let base = document.getElementById('base');
@@ -44,7 +44,7 @@ let pic6 = document.getElementById('gallow6');
     //         }
          
 
-    
+    //Testing changes
 
 
 //-------------------------------------------------------------Main Game--------------------------------------------------------//
@@ -70,7 +70,7 @@ document.addEventListener('keypress', (event) => {
                                                     domUnderScore[0].innerHTML = underScore.join(' ');
                                                     domRightGuess[0].innerHTML = rightWord;
                                                     domWrongGuess[0].innerHTML = wrongWord;
-                                                   
+                                                  
                 
                 //check to see if user word matches guess
                 let checkWin = () => 
@@ -95,7 +95,7 @@ document.addEventListener('keypress', (event) => {
                 checkWin();
             });
             
-           
+            console.log(chosenWord);
 
 
             let changePic = () => 
@@ -141,10 +141,10 @@ document.addEventListener('keypress', (event) => {
 
 
                 
-rules.addEventListener('click', () => {modal.style.display = 'block';});
+rules.addEventListener('click', () => {modal.style.display = 'block'});
                 
                 
-close.addEventListener('click', () => {modal.style.display = 'none';});
+close.addEventListener('click', () => {modal.style.display = 'none'});
                    
                     
                     

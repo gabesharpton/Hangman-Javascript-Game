@@ -100,6 +100,7 @@ document.addEventListener('keypress', (event) => {
 
             let changePic = () => 
             {
+                // I would think about how you could DRY this up!
                     if(guessAmount === 5)
                     {
                         base.style.display = 'none';

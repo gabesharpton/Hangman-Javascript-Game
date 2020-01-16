@@ -13,7 +13,7 @@
  let domUnderScore = document.getElementsByClassName('underscore');
  let domRightGuess = document.getElementsByClassName('rightguess');
  let domWrongGuess = document.getElementsByClassName('wrongguess');
- //let domSpan = document.querySelector('span');
+
 
 
 let base = document.getElementById('base');
@@ -35,22 +35,13 @@ let pic6 = document.getElementById('gallow6');
     }
     
     generateUnderScore();
-    //user guess
-    
-    // let displayGuess = () => 
-    //         {
-    //         domSpan = document.createTextNode(`${guessAmount}`)
-         
-    //         }
-         
-
-    //Testing changes
+  
 
 
 //-------------------------------------------------------------Main Game--------------------------------------------------------//
 document.addEventListener('keypress', (event) => {
     
-    //https://www.w3schools.com/jsref/event_key_keycode.asp
+    
             let keyword = String.fromCharCode(event.keyCode);
         
         //if Users guess is right
@@ -75,8 +66,6 @@ document.addEventListener('keypress', (event) => {
                 //check to see if user word matches guess
                 let checkWin = () => 
                 {
-
-                    
                     // value
                     if(underScore.value === chosenWord.value && rightWord.length === chosenWord.length)
                     {
@@ -87,10 +76,8 @@ document.addEventListener('keypress', (event) => {
                     {
                         setTimeout(function(){alert('you lose')}, 500);
                     }
-                
-                
                 }
-                // displayGuess();
+               
                 changePic();
                 checkWin();
             });
@@ -164,7 +151,7 @@ game counter
 reset button
 */
 
-
+//https://www.w3schools.com/jsref/event_key_keycode.asp
 
 ////////------------------------------------------------------NONSENSE-----------------------------------------------------/////
 

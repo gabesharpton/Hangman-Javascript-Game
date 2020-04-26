@@ -2,6 +2,7 @@ body{
     text-align: center;
 }
 
+/* Use classes for CSS so you can reuse them! */
 #modal {
     background-color: rgb(244, 247, 56);
     position: absolute;

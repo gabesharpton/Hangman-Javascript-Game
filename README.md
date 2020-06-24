@@ -1,5 +1,4 @@
 # Hangman-Javascript-Game
-**This is my first project, hope you enjoy!**
 
 ![](screenshot.png "Picture of the game")
 -------------------------
@@ -22,3 +21,5 @@ All you have to do to start is selected a button on your keyboard to start.
 **To see my game vist this website**
 
 (https://gabesharpton.github.io/Hangman-Javascript-Game/#)
+
+**This is my first project, hope you enjoy!**

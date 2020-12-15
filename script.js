@@ -42,7 +42,7 @@ let pic6 = document.getElementById('gallow6');
 document.addEventListener('keypress', (event) => {
     
     
-            let keyword = String.fromCharCode(event.keyCode);
+            let keyword = String.fromCharCode(event.key);
         
         //if Users guess is right
                     if(chosenWord.indexOf(keyword) > -1)
@@ -229,41 +229,10 @@ reset button
 //     newWord.appendChild(newDiv)
 //   })
 
-//console.log(newWord)
-//console.log(newContent)
-//console.log(submit)
+
+//-------
+
 
 //underScores[0].innerHTML = underScore().join(' ');
 
 //submit.addEventListener('click', wordSelect)
-
-
-
-
-
-
-// console.log(rightWord);
-                        
-                        //check for if word has 2 letters
-                    // }if(rightWord.value > 2){
-                    //     return;
-                        //if wrong put 
-
-                           //add to right words array
-                        // for(let i = 0; i < chosenWord.length; i++){
- // console.log(rightWord);
-                                                    // console.log(chosenWord);
-                                                    // console.log(underScore);
-                                                    // console.log(arrWord);
-                                                    //console.log(keycode);
-  // console.log(wrongWord);
-                                    // console.log(guessAmount);
-                                    // console.log(guessAmount);
-
-                                     //in wrong word array and deduct guess amount
-
-
-                                     // console.log(rightWord);
-    // console.log(chosenWord);
-    // console.log(underScore);
-    // console.log(generateUnderScore());

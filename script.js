@@ -42,8 +42,8 @@ let pic6 = document.getElementById('gallow6');
 document.addEventListener('keypress', (event) => {
     
     
-            let keyword = String.fromCharCode(event.key);
-        
+            let keyword = String.fromCharCode(event.keyCode);
+            console.log("the keyword is: " + keyword);
         //if Users guess is right
                     if(chosenWord.indexOf(keyword) > -1)
                     {
@@ -61,7 +61,9 @@ document.addEventListener('keypress', (event) => {
                                                     domUnderScore[0].innerHTML = underScore.join(' ');
                                                     domRightGuess[0].innerHTML = rightWord;
                                                     domWrongGuess[0].innerHTML = wrongWord;
-                                                  
+                                                  console.log("keyword in replace un score: " + keyword);
+                                                  console.log("rightword in replace un score: " + rightWord);
+                                                  console.log("wrongword in replace un score: " + wrongWord);
                 
                 //check to see if user word matches guess
                 let checkWin = () => 
